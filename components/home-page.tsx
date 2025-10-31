@@ -105,14 +105,15 @@ const HomePage = () => {
 
       {/* BOTTOM NAV (fixed) */}
       <View style={styles.bottomBar}>
-        <View style={styles.tabItem}>
-          <Ionicons name="home" size={22} color="#0061B1" />
-          <Text style={styles.tabLabelActive}>Home</Text>
-        </View>
-        <View style={styles.tabItem}>
-          <Ionicons name="document-text-outline" size={22} color="#71808D" />
-          <Text style={styles.tabLabel}>Accounts</Text>
-        </View>
+        <TouchableOpacity style={styles.tabItem}>
+    <Ionicons name="home" size={22} color="#0061B1" />
+    <Text style={styles.tabLabelActive}>Home</Text>
+  </TouchableOpacity>
+
+  <TouchableOpacity style={styles.tabItem}>
+    <Ionicons name="document-text-outline" size={22} color="#71808D" />
+    <Text style={styles.tabLabel}>Accounts</Text>
+  </TouchableOpacity>
 
         {/* center yellow */}
         <View style={styles.centerWrapper}>
@@ -121,14 +122,15 @@ const HomePage = () => {
           </View>
         </View>
 
-        <View style={styles.tabItem}>
-          <Ionicons name="cash-outline" size={22} color="#71808D" />
-          <Text style={styles.tabLabel}>Move Money</Text>
-        </View>
-        <View style={styles.tabItem}>
-          <Ionicons name="menu-outline" size={22} color="#71808D" />
-          <Text style={styles.tabLabel}>More</Text>
-        </View>
+        <TouchableOpacity style={styles.tabItem}>
+    <Ionicons name="cash-outline" size={22} color="#71808D" />
+    <Text style={styles.tabLabel}>Move Money</Text>
+  </TouchableOpacity>
+
+  <TouchableOpacity style={styles.tabItem}>
+    <Ionicons name="menu-outline" size={22} color="#71808D" />
+    <Text style={styles.tabLabel}>More</Text>
+  </TouchableOpacity>
       </View>
     </View>
   );
@@ -261,6 +263,7 @@ const styles = StyleSheet.create({
   accountActionsRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-end',
     gap: 10,
     paddingTop: 6,
   },
@@ -300,6 +303,7 @@ const styles = StyleSheet.create({
   tabItem: {
     alignItems: 'center',
     width: 62,
+    flex : 1,
   },
   tabLabel: {
     fontSize: 11,
