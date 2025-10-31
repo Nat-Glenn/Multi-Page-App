@@ -123,7 +123,7 @@ const HomePage = () => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.tabItem}>
+        <TouchableOpacity style={styles.tabItem} onPress={() => router.push("/move_money")}>
     <Ionicons name="cash-outline" size={22} color="#71808D" />
     <Text style={styles.tabLabel}>Move Money</Text>
   </TouchableOpacity>

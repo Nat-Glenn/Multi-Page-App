@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React from "react";
@@ -7,7 +7,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 const PHONE_MAX = 420;
 const PRIMARY = "#0069d8";
 
-const ROWS = [
+const Rows = [
   { id: "1", title: "Transfer Between My Accounts", icon: "swap-horizontal-outline" },
   { id: "2", title: "Pay a Bill", icon: "document-text-outline" },
   { id: "3", title: "Interac E-Transfer", icon: "paper-plane-outline" },
@@ -23,47 +23,44 @@ export default function MoveMoney() {
 
   return (
     <View style={styles.screen}>
-      {/* Phone-width wrapper */}
+      {/* Phone wrapper */}
       <View style={styles.phone}>
         <LinearGradient
-          colors={["#0A5DB6", "#0B77DA"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.header}
+        colors={["#0A5DB6", "#0B77DA"]}
+        start={{ x:0, y:0 }}
+        end={{ x:1, y:1 }}
+        style={styles.header}
         >
           <View style={styles.headerTop}>
-            <Text style={styles.appLabel}>RBC Mobile</Text>
+            <Text style={styles.appLabel}>RBC MMobile</Text>
             <View style={{ flexDirection: "row", gap: 14 }}>
-              <Ionicons name="help-circle-outline" size={22} color="#fff" />
-              <Ionicons name="ellipsis-vertical" size={22} color="#fff" />
+              <Ionicons name="help-circle-outline" size={22} color="#fff"/>
+              <Ionicons name="ellipsis-vertical" size={22} color="#fff"/>
             </View>
           </View>
           <Text style={styles.title}>Move Money</Text>
         </LinearGradient>
 
         {/* content */}
-        <View style={{ flex: 1 }}>
-          {ROWS.map(r => (
+        <View style={{ flex:1}}>
+          {Rows.map(r => (
             <TouchableOpacity key={r.id} activeOpacity={0.7} style={styles.row}>
               <View style={styles.leftIcon}>
-                <Ionicons name={r.icon as any} size={22} color={PRIMARY} />
+                <Ionicons name={r.icon as any} size={22} color={PRIMARY}/>
               </View>
 
               {r.title.startsWith("Interac") ? (
                 <Text style={styles.rowText}>
-                  <Text style={{ fontStyle: "italic" }}>Interac</Text>
-                  <Text> e-Transfer</Text>
-                </Text>
+                  <Text style={{ fontStyle: "italic" }}>Interact</Text></Text>
               ) : (
                 <Text style={styles.rowText}>{r.title}</Text>
               )}
 
-              <Ionicons name="chevron-forward" size={18} color="#9AA4AE" />
+              <Ionicons name="chevron-forward" size={18} color="#9AA4AE"/>
             </TouchableOpacity>
           ))}
-        </View>
-
-        {/* bottom bar */}
+      </View>
+      {/* bottom bar */}
         <View style={styles.bottomBar}>
           <TouchableOpacity style={styles.tabItem} onPress={() => router.push("/")}>
             <Ionicons name="home" size={22} color="#71808D" />
@@ -73,6 +70,13 @@ export default function MoveMoney() {
             <Ionicons name="document-text-outline" size={22} color="#71808D" />
             <Text style={styles.tabLabel}>Accounts</Text>
           </TouchableOpacity>
+
+          <View style={styles.centerWrapper} pointerEvents="none"> 
+            <View style={styles.centerButton}>
+              <Ionicons name="chevron-up" size={26} color="#000" />
+            </View>
+          </View>
+
           <TouchableOpacity style={styles.tabItem}>
             <Ionicons name="cash-outline" size={22} color="#0061B1" />
             <Text style={styles.tabLabelActive}>Move Money</Text>
@@ -120,6 +124,7 @@ const styles = StyleSheet.create({
   rowText: { flex: 1, fontSize: 16, color: "#333" },
 
   bottomBar: {
+    position: "relative",
     height: 64,
     backgroundColor: "#fff",
     borderTopWidth: StyleSheet.hairlineWidth,
@@ -128,8 +133,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
   },
+
+  centerWrapper: {
+    position: "absolute",
+    alignSelf: "center",
+    top: -26,
+    zIndex: 2,
+  },
+  centerButton: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: "#FFD600",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 5,
+    borderColor: "#fff",
+  },
   tabItem: { alignItems: "center", width: 62, flex: 1 },
   tabLabel: { fontSize: 11, color: "#71808D", marginTop: 2 },
   tabLabelActive: { fontSize: 11, color: "#0061B1", marginTop: 2 },
 });
-
