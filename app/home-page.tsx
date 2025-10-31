@@ -1,9 +1,10 @@
-// HomePage.tsx
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useRouter } from "expo-router";
 import React from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const HomePage = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <View
@@ -28,7 +29,7 @@ const HomePage = () => {
         </View>
       </View>
 
-      {/* MAIN CONTENT (no scroll) */}
+      {/* MAIN CONTENT */}
       <View style={styles.content}>
         <View style={styles.actionRow}>
           <View style={styles.actionCard}>
@@ -110,7 +111,7 @@ const HomePage = () => {
     <Text style={styles.tabLabelActive}>Home</Text>
   </TouchableOpacity>
 
-  <TouchableOpacity style={styles.tabItem}>
+  <TouchableOpacity style={styles.tabItem} onPress={() => router.push("/accounts-page")}>
     <Ionicons name="document-text-outline" size={22} color="#71808D" />
     <Text style={styles.tabLabel}>Accounts</Text>
   </TouchableOpacity>

@@ -1,6 +1,6 @@
-import { Text, View } from "react-native";
 import React from "react";
-import HomePage from "@/components/home-page";  
+import { View } from "react-native";
+import HomePage from "./home-page";
 
 export default function Index() {
   return (
@@ -12,16 +12,6 @@ export default function Index() {
       }}
     >
       <HomePage />
-
-import React from "react";
-import { registerRootComponent } from "expo";
-import { View } from "react-native";
-import AccountsPage from "../components/AccountsPage";
-
-const App = () => {
-  return (
-    <View style={{ flex: 1 }}>
-      <AccountsPage />   
     </View>
   );
 }
