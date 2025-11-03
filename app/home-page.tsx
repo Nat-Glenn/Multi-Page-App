@@ -104,7 +104,7 @@ const HomePage = () => {
         </View>
       </View>
 
-      {/* BOTTOM NAV (fixed) */}
+      {/* BOTTOM NAV */}
       <View style={styles.bottomBar}>
         <TouchableOpacity style={styles.tabItem}>
     <Ionicons name="home" size={22} color="#0061B1" />
@@ -123,7 +123,7 @@ const HomePage = () => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.tabItem} onPress={() => router.push("/move_money")}>
+  <TouchableOpacity style={styles.tabItem} onPress={() => router.push("/move-money" as any)}>
     <Ionicons name="cash-outline" size={22} color="#71808D" />
     <Text style={styles.tabLabel}>Move Money</Text>
   </TouchableOpacity>
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3F6F8',
   },
   header: {
-    height: 190,
+    height: 173,
     paddingHorizontal: 18,
     paddingTop: 8,
     backgroundColor: '#0061B1',
@@ -190,9 +190,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   content: {
-    flex: 1,
     paddingTop: 12,
     paddingBottom: 0,
+    flexGrow: 1,
   },
   actionRow: {
     flexDirection: 'row',
@@ -222,10 +222,9 @@ const styles = StyleSheet.create({
   },
   sectionCardSmall: {
     backgroundColor: '#fff',
-    borderRadius: 12,
     paddingHorizontal: 12,
     paddingVertical: 10,
-    marginBottom: 6,
+    marginBottom: -40,
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -293,6 +292,8 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   bottomBar: {
+    position: 'absolute',
+    left: 0, right: 0, bottom: 0,
     height: 64,
     backgroundColor: '#fff',
     flexDirection: 'row',
@@ -300,6 +301,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: '#E1E4E8',
+    marginTop: -10,
   },
   tabItem: {
     alignItems: 'center',
