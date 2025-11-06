@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   content: {
     paddingTop: 12,
     paddingBottom: 0,
-    flexGrow: 1,
+    flex: 1,
   },
   actionRow: {
     flexDirection: 'row',
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 12,
     paddingVertical: 10,
-    marginBottom: -40,
+    marginBottom: 6,
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -292,16 +292,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   bottomBar: {
-    position: 'absolute',
-    left: 0, right: 0, bottom: 0,
-    height: 64,
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    borderTopWidth: StyleSheet.hairlineWidth,
+    height: 64, 
+    backgroundColor: '#fff', 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    justifyContent: 'space-around', 
+    borderTopWidth: StyleSheet.hairlineWidth, 
     borderTopColor: '#E1E4E8',
-    marginTop: -10,
   },
   tabItem: {
     alignItems: 'center',
