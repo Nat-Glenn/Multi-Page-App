@@ -1,15 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
-import {
-  Alert,
-  Platform,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Alert, Platform, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View, } from "react-native";
 
 type NavItem = {
   key: string;
@@ -321,7 +313,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "white",
-    paddingHorizontal: 55,
+    paddingHorizontal: 25,
     paddingVertical: 10,
     borderTopWidth: 1,
     borderTopColor: "#E5E7EB",
